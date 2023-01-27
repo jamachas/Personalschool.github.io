@@ -11,7 +11,6 @@ function newGame() {
   if (gameInProcess == true)  //true means the last game wasn't finished before user clicked "New Game"
     aborted();
   gameInProcess = true; //game starts
-  masthead.innerText = "Salva a Kelvin";
   masthead.setAttribute("status", "normal"); //no color
   answer = newRandomWord();
   console.log("Hey you're cheating! " + 'Close the console! The answer is "' + answer + '"'); // show answer in the console
