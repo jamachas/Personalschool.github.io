@@ -30,20 +30,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
-  function validateForm() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    var allChecked = true;
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (!checkboxes[i].checked) {
-        allChecked = false;
-        break;
-      }
-    }
-    if (allChecked) {
-      alert("¡Respuesta correcta!");
-      return true;
-    } else {
-      alert("Sigue intentando");
-      return false;
-    }
+const form = document.querySelector("form");
+const correctCheckboxes = ["desempeno", "crecimiento", "innovacion", "sst", "bienestar", "competencias" ];
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const selectedCheckboxes = [...form.elements].filter(el => el.checked).map(el => el.name);
+  if (selectedCheckboxes.length !== correctCheckboxes.length || !selectedCheckboxes.every(checkbox => correctCheckboxes.includes(checkbox))) {
+    alert("Sigue intentando");
+  } else {
+    alert("¡Felicidades, lo lograste!");
   }
+});
