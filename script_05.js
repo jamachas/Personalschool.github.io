@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 const form = document.querySelector("form");
-const correctCheckboxes = ["desempeno", "crecimiento", "innovacion", "sst", "bienestar", "competencias" ];
+const correctCheckboxes = ["desempeno", "crecimiento", "innovacion", "sst", "bienestar"];
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
